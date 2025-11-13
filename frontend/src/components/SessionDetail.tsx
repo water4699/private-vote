@@ -29,7 +29,7 @@ export function SessionDetail({ sessionId, onClose }: SessionDetailProps) {
     address: contractAddress as `0x${string}`,
     abi: GOVERNANCE_FEEDBACK_ABI,
     functionName: 'hasMemberSubmitted',
-    args: hasSubmittedQueryEnabled ? [BigInt(sessionId), address] : undefined,
+    args: hasSubmittedQueryEnabled && address ? [BigInt(sessionId), address as `0x${string}`] : undefined,
     query: {
       enabled: hasSubmittedQueryEnabled,
     },
