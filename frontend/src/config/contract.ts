@@ -1,7 +1,8 @@
 // Contract addresses for different networks
+// NOTE: Replace these with your deployed contract addresses
 export const CONTRACT_ADDRESSES = {
-  localhost: '0x5FbDB2315678afecb367f032d93F642f64180aa3',
-  sepolia: '0x6D9328420ba85b275FF509655209FDd090c48514',
+  localhost: '0x0000000000000000000000000000000000000000', // Auto-deployed locally
+  sepolia: '0x0000000000000000000000000000000000000000', // Deploy with: npx hardhat deploy --network sepolia
   baseSepolia: '0x0000000000000000000000000000000000000000', // TODO: Deploy contract to Base Sepolia
 } as const;
 

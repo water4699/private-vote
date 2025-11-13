@@ -39,15 +39,14 @@ Where all operations happen on encrypted data until final decryption.
 The frontend automatically detects and connects to the correct network:
 
 **Localhost:**
-- Contract Address: `0x5FbDB2315678afecb367f032d93F642f64180aa3`
+- Contract Address: `0x[DEPLOYED_CONTRACT_ADDRESS]` (auto-deployed)
 - Chain ID: 31337
 - RPC URL: http://127.0.0.1:8545
 
 **Sepolia Testnet:**
-- Contract Address: `0xeBd3AbDBbD3a1b6F058149cf591C5902A5b1f5B5`
+- Contract Address: `0x[DEPLOYED_CONTRACT_ADDRESS]` (run `npx hardhat deploy --network sepolia`)
 - Chain ID: 11155111
-- Transaction: `0xb9adea4533bc32180ba6124f2548bdb09864bbd941a0e3cdece71f9c37f43610`
-- Explorer: [View on Etherscan](https://sepolia.etherscan.io/address/0xeBd3AbDBbD3a1b6F058149cf591C5902A5b1f5B5)
+- Explorer: [View on Etherscan](https://sepolia.etherscan.io/)
 - RPC URL: https://1rpc.io/sepolia
 
 ## Quick Start
