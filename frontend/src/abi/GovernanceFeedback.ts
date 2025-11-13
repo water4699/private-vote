@@ -345,6 +345,19 @@ export const GOVERNANCE_FEEDBACK_ABI = [
         "internalType": "uint256",
         "name": "sessionId",
         "type": "uint256"
+      }
+    ],
+    "name": "grantDecryptionAccess",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "sessionId",
+        "type": "uint256"
       },
       {
         "internalType": "uint32",

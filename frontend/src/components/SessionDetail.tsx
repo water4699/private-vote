@@ -71,7 +71,7 @@ export function SessionDetail({ sessionId, onClose }: SessionDetailProps) {
     showResults: (isFinalized || decryptionResults) && results
   });
 
-  const { writeContract: submitFeedback, data: submitHash, isPending: isSubmitPending } = useWriteContract();
+  const { data: submitHash, isPending: isSubmitPending } = useWriteContract();
   const { isSuccess: isSubmitSuccess, isLoading: isSubmitConfirming } = useWaitForTransactionReceipt({ hash: submitHash });
 
   const { writeContract: finalize, data: finalizeHash, isPending: isFinalizePending } = useWriteContract();
@@ -144,7 +144,7 @@ export function SessionDetail({ sessionId, onClose }: SessionDetailProps) {
     return <div className="card">Loading...</div>;
   }
 
-  const [title, description, startTime, endTime, creator, finalized, feedbackCount] = sessionInfo;
+  const [title, description, startTime, endTime, creator, finalized, feedbackCount] = sessionInfo || ['', '', '0', '0', '', false, 0n];
   
   const now = Math.floor(Date.now() / 1000);
   const isActive = Number(startTime) <= now && now <= Number(endTime);
@@ -485,11 +485,7 @@ export function SessionDetail({ sessionId, onClose }: SessionDetailProps) {
         // LOCAL TESTING WORKAROUND: Since finalizeWithResults has issues in local Hardhat environment
         console.log('[SessionDetail] LOCALHOST: Simulating finalizeWithResults...');
 
-        // Check session info first
-        const ethersLib = await import('ethers');
-        const finalizeProvider = new ethersLib.BrowserProvider(window.ethereum);
-        const finalizeSigner = await finalizeProvider.getSigner();
-        const finalizeContract = new ethersLib.Contract(contractAddress, GOVERNANCE_FEEDBACK_ABI, finalizeSigner);
+        // Check session info first - no contract interaction needed for local testing
       } else {
         // TESTNET: Use real finalizeWithResults contract call
         console.log('[SessionDetail] TESTNET: Calling real finalizeWithResults contract...');
