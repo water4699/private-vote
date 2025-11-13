@@ -1,0 +1,36 @@
+node_modules
+.env
+coverage
+coverage.json
+typechain
+typechain-types
+
+# Hardhat files
+cache
+artifacts
+fhevmTemp
+
+# TypeScript
+dist
+types
+
+# IDE
+.vscode
+.idea
+
+# OS
+.DS_Store
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Deployment
+deployments/localhost
+deployments/hardhat
+

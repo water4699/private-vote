@@ -1,0 +1,14 @@
+node_modules
+artifacts
+cache
+coverage
+types
+typechain
+typechain-types
+dist
+fhevmTemp
+
+# Frontend build output
+frontend/dist
+frontend/node_modules
+
